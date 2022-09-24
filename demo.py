@@ -1,21 +1,21 @@
-from speech_recognition import Microphone as micro, Recognizer as rec
-from pythonosc.udp_client import SimpleUDPClient as udp
+from speech_recognition import Microphone, Recognizer
+from pythonosc.udp_client import SimpleUDPClient
 
 
-client = udp("127.0.0.1", 9000)
-recognizer = rec()
-mic = micro()
+udp = SimpleUDPClient("127.0.0.1", 9000)
+rec = Recognizer()
+mic = Microphone()
 
 
 def send_to_vrc():
 
     with mic as source:
 
-        audio = recognizer.listen(source)
+        speech = rec.listen(source)
     #
-    output = recognizer.recognize_google(audio)
+    text = rec.recognize_google(speech)
     
-    client.send_message("/chatbox/input", [output, True])
+    udp.send_message("/chatbox/input", [text, True])
 #
 
 
