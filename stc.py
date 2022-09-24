@@ -1,7 +1,7 @@
 # made for a vrchat player usernamed Cachie~
-from time import sleep
 from speech_recognition import Microphone, Recognizer, UnknownValueError
 from pythonosc.udp_client import SimpleUDPClient
+from time import sleep
 
 
 vrchat = SimpleUDPClient("127.0.0.1", 9000)
