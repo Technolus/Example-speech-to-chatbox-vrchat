@@ -1,3 +1,4 @@
+# made for a VRChat player usernamed Cachie~
 from speech_recognition import Microphone, Recognizer
 from pythonosc.udp_client import SimpleUDPClient
 
