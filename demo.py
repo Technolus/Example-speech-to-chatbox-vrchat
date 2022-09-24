@@ -1,5 +1,5 @@
 # made for a VRChat player usernamed Cachie~
-from speech_recognition import Microphone, Recognizer
+from speech_recognition import Microphone, Recognizer, UnknownValueError as error
 from pythonosc.udp_client import SimpleUDPClient
 
 
@@ -10,13 +10,19 @@ mic = Microphone()
 
 def send_to_vrc():
 
-    with mic as source:
+    try:
 
-        speech = rec.listen(source)
+        with mic as source:
+            speech = rec.listen(source)
+
+            text = rec.recognize_google(speech)
+
+            udp.send_message("/chatbox/input", [text, True])
+    #   #
+    except error:
+
+        pass
     #
-    text = rec.recognize_google(speech)
-    
-    udp.send_message("/chatbox/input", [text, True])
 #
 
 
