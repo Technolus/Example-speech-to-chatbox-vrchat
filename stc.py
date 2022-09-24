@@ -2,7 +2,6 @@
 from speech_recognition import Microphone, Recognizer, UnknownValueError
 from pythonosc.udp_client import SimpleUDPClient
 from keyboard import wait
-from time import sleep
 
 
 vrchat = SimpleUDPClient("127.0.0.1", 9000)
@@ -11,8 +10,7 @@ mic = Microphone()
 
 
 print(f"{__file__} is now running\n\nbe silent for a moment to improve your experience")
-sleep(1)
-with mic as back_ground_noise: engine.adjust_for_ambient_noise(back_ground_noise, duration=1)
+with mic as back_ground_noise: engine.adjust_for_ambient_noise(back_ground_noise, duration=2)
 print(f"minimum energy threshold set to: {engine.energy_threshold}\n\npress \"F\" to speak!\n\n")
 
 
