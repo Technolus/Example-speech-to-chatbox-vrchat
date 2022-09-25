@@ -20,10 +20,10 @@ def speech_to_chatbox():
     with mic as voice: speech = engine.listen(voice)
     try:
         text = engine.recognize_google(speech)
-        print(f"speech recognized as: {text}. sent to vrchat!\n")
+        print(f"speech recognized as: {text}.\n\nsent to vrchat!\n")
         vrchat.send_message("/chatbox/input", [text, True]) # True to send and display, False to send only
     except UnknownValueError:
-        print("didn't quite get that, try again...\npress \"F\" to speak!")
+        print("didn't quite get that, try again...\n\npress \"F\" to speak!")
         text = ""
     #
 #
