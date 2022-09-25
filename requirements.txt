@@ -1,3 +1,3 @@
-speechrecognition
-python-osc
-keyboard
+speechrecognition=3.8.1
+python-osc=1.8.0
+keyboard=0.13.5
