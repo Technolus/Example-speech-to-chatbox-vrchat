@@ -10,7 +10,7 @@ engine = Recognizer()
 mic = Microphone()
 
 
-print(f"\n{basename(__file__)} is now running\n\nbe silent for a moment to set the mic sensitivity\n")
+print(f"{basename(__file__)} is now running\n\nbe silent for a moment to set the mic sensitivity\n")
 with mic as back_ground_noise: engine.adjust_for_ambient_noise(back_ground_noise, duration=2)
 print(f"mic sensitivity set to: {engine.energy_threshold}\n\npress \"F\" to speak!\n")
 
