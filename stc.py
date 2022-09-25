@@ -10,9 +10,9 @@ engine = Recognizer()
 mic = Microphone()
 
 
-print(f"\n{basename(__file__)} is now running\n\nbe silent for a moment to improve your experience\n")
+print(f"\n{basename(__file__)} is now running\n\nbe silent for a moment to set the mic sensitivity\n")
 with mic as back_ground_noise: engine.adjust_for_ambient_noise(back_ground_noise, duration=2)
-print(f"minimum energy threshold set to: {engine.energy_threshold}\n\npress \"F\" to speak!\n")
+print(f"mic sensitivity set to: {engine.energy_threshold}\n\npress \"F\" to speak!\n")
 
 
 def speech_to_chatbox():
@@ -23,7 +23,7 @@ def speech_to_chatbox():
         print(f"speech recognized as: {text}. sent to vrchat!\n")
         vrchat.send_message("/chatbox/input", [text, True]) # True to send and display, False to send only
     except UnknownValueError:
-        print("didn't quite get that, try again...\n")
+        print("didn't quite get that, try again...\npress \"F\" to speak!")
         text = ""
     #
 #
