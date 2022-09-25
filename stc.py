@@ -23,7 +23,7 @@ def speech_to_chatbox():
         print(f"speech recognized as: {text}. sent to vrchat!\n")
         vrchat.send_message("/chatbox/input", [text, True]) # True to send and display, False to send only
     except UnknownValueError:
-        print("didn't quite get that, say it again please...\n")
+        print("didn't quite get that, try again...\n")
         text = ""
     #
 #
