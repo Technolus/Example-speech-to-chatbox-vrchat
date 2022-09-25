@@ -9,6 +9,4 @@ how to use (assuming vrchat is up and running):
   py -m pip install -r requirements.txt
   ```
   2. run the script `stc.py` using your favorite interpreter.
-  3. press the "F" key each time you want to be heard by the application,
-  once the speech has been properly processed,
-  it'll turn into text and be sent to the vrchat's chatbox.
+  3. press the "F" key each time you want to be heard by the application, once the speech has been properly processed, it'll turn into text and be sent to the vrchat's chatbox.
