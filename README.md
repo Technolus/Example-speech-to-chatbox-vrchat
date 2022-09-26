@@ -2,7 +2,7 @@
 a very simple speech-to-text python script for vrchat, that's all you get.
 
 how to use:
-1. download and install python from [here](https://www.python.org/downloads/){:target="_blank" rel="noopener"}
+1. download and install python from [here](https://www.python.org/downloads/)
 2. install the modules mentioned in the requirements.txt file.
 run the following command in CMD where the requirements.txt file is found.
 ```
